@@ -264,6 +264,13 @@ const config: HardhatUserConfig = {
       tags: ["staging"],
       gasMultiplier: 2,
     },
+    'godwoken-testnet': {
+      url: `https://godwoken-testnet-v1.ckbapp.dev`,
+      accounts,
+      chainId: 71401,
+      live: true,
+      saveDeployments: true,
+    }
   },
   paths: {
     artifacts: "artifacts",

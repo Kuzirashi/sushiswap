@@ -14,7 +14,7 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
 
   let sushiAddress;
 
-  if (chainId === '31337') {
+  if (chainId === '31337' || chainId === '71401') {
     sushiAddress = (await deployments.get("SushiToken")).address
   } else if (chainId in SUSHI) {
     sushiAddress = SUSHI[chainId]
@@ -37,4 +37,4 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
 }
 
 module.exports.tags = ["MiniChefV2"]
-// module.exports.dependencies = ["UniswapV2Factory", "UniswapV2Router02"]
+module.exports.dependencies = ["UniswapV2Factory", "UniswapV2Router02"]
